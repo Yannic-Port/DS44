@@ -1,0 +1,28 @@
+import random
+
+guesses_made = 0
+
+name = input('Hallo! Wie ist dein Name?\n')
+
+number = random.randint(1, 20)
+print ('Okay, {0}, ich denke mir eine Zahl zwichen 1 und 20.'.format(name))
+
+while guesses_made < 6:
+
+    guess = int(input('Errate sie: '))
+
+    guesses_made += 1
+
+    if guess < number:
+        print ('Die Zahl ist zu Niedrig.')
+
+    if guess > number:
+        print ('Die Zahl ist zu Hoch.')
+
+    if guess == number:
+        break
+
+if guess == number:
+    print ('Gut gemacht, {0}! Meine erdachte nummer ist {1}!'.format(name, guesses_made))
+else:
+    print ('Nein. Ich habe an die {0} gedacht'.format(number))
