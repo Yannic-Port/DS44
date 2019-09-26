@@ -1,0 +1,14 @@
+import numpy as np # linear algebra
+import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+
+
+def read_Data():
+    df=pd.read_csv("/kaggle/input/AB_NYC_2019.csv")
+    return df
+
+data=read_Data()
+prise=data["price"]
+longitude=data["longitude"]
+latitude=data["latitude"]
+import matplotlib.pyplot as plt
+plt.plot(latitude, longitude, ".",alpha=0.002)
