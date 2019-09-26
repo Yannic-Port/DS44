@@ -1,0 +1,23 @@
+import numpy as np # linear algebra
+import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
+
+
+def read_Data():
+    df=pd.read_csv("/kaggle/input/AB_NYC_2019.csv")
+    return df
+
+abbildung = {
+    "Manhattan": "red",
+    "Staten Island" : "blue",
+    "Brooklyn" : "green",
+    "Bronx" : "Black",
+    "Queens" : "pink"
+}
+
+data=read_Data()
+colors=data["neighbourhood_group"].map(abbildung)
+x=data["longitude"]
+y=data["latitude"]
+number_of_reviews=data["number_of_reviews"]
+import matplotlib.pyplot as plt
+plt.scatter(x, y, c=colors, alpha=0.1)
